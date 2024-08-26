@@ -215,9 +215,42 @@
             </div>
         </div>
     </div>
-<script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-</script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+        
+    <script>
+        function createFlightDetail(departureTime, departureAirport, arrivalTime, arrivalAirport, airline) {
+            return `
+                <div class="space-y-6 mb-6">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://picsum.photos/32/32" alt="Airline Logo" class="w-8 h-8 rounded">
+                            <div>
+                                <div class="text-2xl font-bold">${departureTime}</div>
+                                <div class="text-gray-600">${departureAirport}</div>
+                            </div>
+                        </div>
+                        <div class="text-blue-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold">${arrivalTime}</div>
+                            <div class="text-gray-600">${arrivalAirport}</div>
+                        </div>
+                    </div>
+                    <div class="text-lg font-semibold">${airline}</div>
+                </div>
+            `;
+        }
+    
+        const flightDetailsContainer = document.getElementById('flightDetails');
+        flightDetailsContainer.innerHTML += createFlightDetail("20:55", "MNL T2", "22:15", "BCD", "Philippines AirAsia");
+        flightDetailsContainer.innerHTML += '<hr class="my-6 border-gray-200">';
+        flightDetailsContainer.innerHTML += createFlightDetail("20:55", "MNL T2", "22:15", "BCD", "Philippines AirAsia");
+    </script>
 </body>
 </html>
