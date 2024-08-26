@@ -1,303 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Smith - Social Media Profile</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            light: '#4ade80',
-                            DEFAULT: '#22c55e',
-                            dark: '#16a34a',
-                        }
-                    }
-                }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>John Smith - Social Media Profile</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                light: "#4ade80",
+                                DEFAULT: "#22c55e",
+                                dark: "#16a34a",
+                            },
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            body {
+                background-color: #f0fdf4;
             }
-        }
-    </script>
-    <style>
-        @media (max-width: 640px) {
-            .mobile-menu {
-                display: none;
+            .profile-header {
+                height: 150px;
+                background-color: #22c55e;
             }
-            .mobile-menu.active {
-                display: block;
+            .profile-image {
+                width: 100px;
+                height: 100px;
+                border: 4px solid white;
+                margin-top: -50px;
             }
-        }
-    </style>
-</head>
-<body class="bg-green-100">
-    <nav class="bg-white shadow-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
-      <div class="flex">
-        <div class="flex-shrink-0 flex items-center">
-          <!-- Menu toggle button -->
-          <button class="sm:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="mobile-menu-button">
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-          <!-- Logo -->
-          <a href="#" class="ml-4 font-bold text-xl">Put Logo Here</a>
-        </div>
-      </div>
-      <div class="hidden sm:flex flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
-        <div class="max-w-lg w-full lg:max-w-xs">
-          <label for="search" class="sr-only">Search</label>
-          <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-              </svg>
-            </div>
-            <input id="search" name="search" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Search menu..." type="search">
-          </div>
-        </div>
-      </div>
-      <div class="flex items-center">
-      <!-- Message icon -->
-        <button class="ml-3 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          <span class="sr-only">View messages</span>
-          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-          </svg>
-        </button>
-        <!-- Notification bell -->
-        <button class="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          <span class="sr-only">View notifications</span>
-          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-          </svg>
-        </button>
-        <!-- Profile dropdown -->
-        <div class="ml-3 relative">
-          <div>
-            <button type="button" class="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="user-menu" aria-expanded="false" aria-haspopup="true">
-              <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" src="https://i.pravatar.cc/32?img=68" alt="">
+        </style>
+    </head>
+    <body>
+        <nav class="bg-white shadow-sm p-4 flex justify-between items-center">
+            <button class="text-gray-500">
+                <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
-          </div>
-        </div>
-        <span class="ml-3 text-sm font-medium text-gray-700">johnsmith@studio.com</span>
-      </div>
-    </div>
-  </div>
-  <div class="sm:hidden mobile-menu" id="mobile-menu">
-    <div class="px-2 pt-2 pb-3 space-y-1">
-        <input type="search" placeholder="Search menu..." class="block w-full px-3 py-2 rounded-md border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-    </div>
-  </div>
+            <span class="font-bold text-xl">Put Logo Here</span>
+            <span class="text-sm text-gray-600">johnsmith@studio.com</span>
+        </nav>
 
-</nav>
-    <header class="bg-primary-dark h-48"></header>
-    
-    <div class="container mx-auto px-4 -mt-24">
-        <div class="flex flex-wrap">
-            <!-- Left column -->
-            <div class="w-full md:w-1/4 px-4 mb-8">
-                <img src="https://i.pravatar.cc/128?img=68" alt="Profile picture" class="rounded-full w-32 h-32 border-4 border-white mb-4"/>
-                <h1 class="text-2xl font-bold">John Smith</h1>
-                <p class="text-gray-600">@johnsmith</p>
-                
-                <p class="mt-4 text-sm">Principal Software Engineer of Codecodemelon. Creator of Profile Theme. Bringing the world closer together. Studied Computer Science and Psychology at Harvard University.</p>
-                
-                <div class="flex items-center mt-4 text-sm">
-                    <svg class="w-4 h-4 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                    </svg>
-                    <span>New York, NY</span>
-                </div>
-                
-                <div class="flex items-center mt-2 text-sm">
-                    <svg class="w-4 h-4 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-primary hover:text-primary-dark">codecodemelon.github.io/social-media-profile</a>
-                </div>
+        <div class="profile-header"></div>
 
-                <hr class="my-6 border-green-300">
-                
-                <h2 class="font-bold mt-8 mb-4">Verified people to connect</h2>
-                <div class="space-y-4">
-                    <div class="flex items-center">
-                        <img src="https://i.pravatar.cc/40?img=1" alt="" class="w-10 h-10 rounded-full mr-2"/>
-                        <div>
-                            <p class="font-bold text-sm">Dindo Reyes</p>
-                            <p class="text-xs text-gray-600">234k connections</p>
-                        </div>
-                        <button class="ml-auto bg-primary hover:bg-primary-dark text-white text-xs px-3 py-1 rounded-full transition duration-300">Connect</button>
-                    </div>
-                    <div class="flex items-center">
-                        <img src="https://i.pravatar.cc/40?img=2" alt="" class="w-10 h-10 rounded-full mr-2"/>
-                        <div>
-                            <p class="font-bold text-sm">Jose Michael Agas</p>
-                            <p class="text-xs text-gray-600">1.5M connections</p>
-                        </div>
-                        <button class="ml-auto bg-primary hover:bg-primary-dark text-white text-xs px-3 py-1 rounded-full transition duration-300">Connect</button>
-                    </div>
-                </div>
+        <div class="container mx-auto px-4">
+            <img
+                src="https://i.pravatar.cc/100?img=68"
+                alt="John Smith"
+                class="profile-image rounded-full mx-auto"
+            />
+            <h1 class="text-2xl font-bold text-center mt-2">John Smith</h1>
+            <p class="text-gray-600 text-center">@johnsmith</p>
+
+            <p class="mt-4 text-sm text-center">
+                Principal Software Engineer of Codecodemelon. Creator of Profile
+                Theme. Bringing the world closer together. Studied Computer
+                Science and Psychology at Harvard University.
+            </p>
+
+            <div class="flex items-center justify-center mt-4 text-sm">
+                <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-primary"></i>
+                <span>New York, NY</span>
             </div>
-            
-            <!-- Main content -->
-            <div class="w-full md:w-2/4 px-4 mt-8 md:mt-0 mb-8">
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex justify-between border-b pb-4 text-sm">
-                        <div>
-                            <span class="font-bold">382</span> Posts
-                        </div>
-                        <div>
-                            <span class="font-bold">1.3m</span> Connections
-                        </div>
-                        <div>
-                            <span class="font-bold">1,397</span> Connected
-                        </div>
-                        <div>
-                            <span class="font-bold">120</span> Videos
-                        </div>
-                        <div>
-                            <span class="font-bold">2,592</span> Photos
-                        </div>
+
+            <div class="flex items-center justify-center mt-2 text-sm">
+                <i data-lucide="link" class="w-4 h-4 mr-2 text-primary"></i>
+                <a href="#" class="text-primary"
+                    >codecodemelon.github.io/social-media-profile</a
+                >
+            </div>
+
+            <hr class="my-6 border-green-200" />
+
+            <h2 class="font-bold mb-4">Verified people to connect</h2>
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <img
+                        src="https://i.pravatar.cc/40?img=1"
+                        alt=""
+                        class="w-10 h-10 rounded-full mr-2"
+                    />
+                    <div>
+                        <p class="font-bold text-sm">Dindo Reyes</p>
+                        <p class="text-xs text-gray-600">234k connections</p>
                     </div>
-                    
-                    <!-- Post -->
-                    <div class="mt-8">
-                        <div class="flex items-center mb-4">
-                            <img src="https://i.pravatar.cc/40?img=3" alt="" class="w-10 h-10 rounded-full mr-2"/>
-                            <div>
-                                <p class="font-bold text-sm">Clyde Stanley</p>
-                                <p class="text-xs text-gray-600">at South Lake Tahoe, California</p>
-                            </div>
-                        </div>
-                        
-                        <p class="mb-4">Best vacation of 2024.</p>
-                        
-                        <div class="grid grid-cols-2 gap-4">
-                            <img src="https://picsum.photos/300/200?random=1" alt="" class="w-full h-48 object-cover rounded"/>
-                            <img src="https://picsum.photos/300/200?random=2" alt="" class="w-full h-48 object-cover rounded"/>
-                            <img src="https://picsum.photos/300/200?random=3" alt="" class="w-full h-48 object-cover rounded"/>
-                            <img src="https://picsum.photos/300/200?random=4" alt="" class="w-full h-48 object-cover rounded"/>
-                        </div>
-                        
-                        <div class="flex justify-between mt-4">
-                            <button class="flex items-center text-sm text-gray-600 hover:text-primary transition duration-300">
-                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
-                                React
-                            </button>
-                            <button class="flex items-center text-sm text-gray-600 hover:text-primary transition duration-300">
-                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                </svg>
-                                Comment
-                            </button>
-                            <button class="flex items-center text-sm text-gray-600 hover:text-primary transition duration-300">
-                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                                </svg>
-                                Share
-                            </button>
-                        </div>
-
-                        <!-- Comment Input Section -->
-                        <div class="flex items-center space-x-4 mt-4 p-4 bg-gray-50 rounded-lg">
-                            <img src="https://i.pravatar.cc/40?img=68" alt="Profile" class="w-10 h-10 rounded-full"/>
-                            <input type="text" placeholder="Write a comment..." class="flex-grow p-2 rounded-full bg-white border focus:outline-none focus:ring-2 focus:ring-primary"/>
-                            <button class="p-2 rounded-full hover:bg-gray-200 text-gray-500 hover:text-primary transition duration-300">
-                                <i data-lucide="smile" class="w-6 h-6"></i>
-                            </button>
-                            <button class="p-2 rounded-full hover:bg-gray-200 text-gray-500 hover:text-primary transition duration-300">
-                                <i data-lucide="camera" class="w-6 h-6"></i>
-                            </button>
-                            <button class="p-2 rounded-full hover:bg-gray-200 text-gray-500 hover:text-primary transition duration-300">
-                                <i data-lucide="video" class="w-6 h-6"></i>
-                            </button>
-                            <button class="p-2 rounded-full hover:bg-gray-200 text-gray-500 hover:text-primary transition duration-300">
-                                <i data-lucide="paw-print" class="w-6 h-6"></i>
-                            </button>
-                        </div>
+                    <button
+                        class="ml-auto bg-primary text-white text-xs px-4 py-1 rounded-full"
+                    >
+                        Connect
+                    </button>
+                </div>
+                <div class="flex items-center">
+                    <img
+                        src="https://i.pravatar.cc/40?img=2"
+                        alt=""
+                        class="w-10 h-10 rounded-full mr-2"
+                    />
+                    <div>
+                        <p class="font-bold text-sm">Jose Michael Agas</p>
+                        <p class="text-xs text-gray-600">1.5M connections</p>
                     </div>
-
-                    <!-- Video post -->
-                    <div class="mt-8">
-                        <div class="flex items-center mb-4">
-                            <img src="https://i.pravatar.cc/40?img=3" alt="" class="w-10 h-10 rounded-full mr-2"/>
-                            <div>
-                                <p class="font-bold text-sm">Clyde Stanley</p>
-                                <p class="text-xs text-gray-600">is watching PATAGONIA 8K</p>
-                            </div>
-                        </div>
-
-                        <p class="mb-4">Nice PATAGONIA footage in 8K</p>
-
-                        <div class="relative" style="padding-top: 56.25%">
-                            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/ChOhcHD8fBA" frameborder="0" allowfullscreen></iframe>
-                        </div>
-
-                        <div class="flex justify-between mt-4">
-                            <button class="flex items-center text-sm">
-                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
-                                React
-                            </button>
-                            <button class="flex items-center text-sm">
-                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                </svg>
-                                Comment
-                            </button>
-                            <button class="flex items-center text-sm">
-                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                                </svg>
-                                Share
-                            </button>
-                        </div>
-                        <div class="flex items-center space-x-4 mt-4 p-4 bg-gray-50 rounded-lg">
-                            <img src="https://i.pravatar.cc/40?img=68" alt="Profile" class="w-10 h-10 rounded-full"/>
-                            <input type="text" placeholder="Write a comment..." class="flex-grow p-2 rounded-full bg-white border focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                            <button class="p-2 rounded-full hover:bg-gray-200">
-                                <i data-lucide="smile" class="w-6 h-6 text-gray-500"></i>
-                            </button>
-                            <button class="p-2 rounded-full hover:bg-gray-200">
-                                <i data-lucide="camera" class="w-6 h-6 text-gray-500"></i>
-                            </button>
-                            <button class="p-2 rounded-full hover:bg-gray-200">
-                                <i data-lucide="video" class="w-6 h-6 text-gray-500"></i>
-                            </button>
-                            <button class="p-2 rounded-full hover:bg-gray-200">
-                                <i data-lucide="paw-print" class="w-6 h-6 text-gray-500"></i>
-                            </button>
-                        </div>
+                    <button
+                        class="ml-auto bg-primary text-white text-xs px-4 py-1 rounded-full"
+                    >
+                        Connect
+                    </button>
+                </div>
+                <!-- Flight Details Section -->
+                <div class="container mx-auto px-4 mt-8">
+                    <div
+                        id="flightDetails"
+                        class="bg-white rounded-lg shadow p-6"
+                    >
+                        <h2 class="text-2xl font-bold mb-6">Flight Details</h2>
+                        <!-- Flight details will be inserted here by JavaScript -->
                     </div>
                 </div>
             </div>
 
-            <!-- Right column -->
-            <div class="w-full md:w-1/4 px-4 mt-8 md:mt-0">
-                <div id="flightDetails" class="bg-white rounded-lg shadow p-6">
-                    <h2 class="text-2xl font-bold mb-6">Flight Details</h2>
-                    <!-- Flight details will be inserted here -->
+            <div class="mt-8 bg-white rounded-lg shadow p-4">
+                <div class="grid grid-cols-2 gap-2 mb-4">
+                    <img
+                        src="https://picsum.photos/300/200?random=1"
+                        alt=""
+                        class="w-full h-32 object-cover rounded"
+                    />
+                    <img
+                        src="https://picsum.photos/300/200?random=2"
+                        alt=""
+                        class="w-full h-32 object-cover rounded"
+                    />
+                </div>
+                <div class="flex justify-between text-gray-500 text-sm">
+                    <button class="flex items-center">
+                        <i data-lucide="heart" class="w-5 h-5 mr-1"></i> React
+                    </button>
+                    <button class="flex items-center">
+                        <i
+                            data-lucide="message-circle"
+                            class="w-5 h-5 mr-1"
+                        ></i>
+                        Comment
+                    </button>
+                    <button class="flex items-center">
+                        <i data-lucide="share-2" class="w-5 h-5 mr-1"></i> Share
+                    </button>
+                </div>
+                <div
+                    class="flex items-center mt-4 bg-gray-100 rounded-full p-2"
+                >
+                    <img
+                        src="https://i.pravatar.cc/32?img=68"
+                        alt="Profile"
+                        class="w-8 h-8 rounded-full mr-2"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Write a comment..."
+                        class="bg-transparent flex-grow focus:outline-none"
+                    />
+                    <button class="text-primary">
+                        <i data-lucide="smile" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white rounded-lg shadow p-4">
+                <div class="flex items-center mb-4">
+                    <img
+                        src="https://i.pravatar.cc/40?img=3"
+                        alt=""
+                        class="w-10 h-10 rounded-full mr-2"
+                    />
+                    <div>
+                        <p class="font-bold text-sm">Clyde Stanley</p>
+                        <p class="text-xs text-gray-600">
+                            is watching PATAGONIA 8K
+                        </p>
+                    </div>
+                </div>
+                <p class="mb-4">Nice PATAGONIA footage in 8K</p>
+                <div class="relative pb-[56.25%]">
+                    <iframe
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/ChOhcHD8fBA"
+                        frameborder="0"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <div class="flex justify-between text-gray-500 text-sm mt-4">
+                    <button class="flex items-center">
+                        <i data-lucide="heart" class="w-5 h-5 mr-1"></i> React
+                    </button>
+                    <button class="flex items-center">
+                        <i
+                            data-lucide="message-circle"
+                            class="w-5 h-5 mr-1"
+                        ></i>
+                        Comment
+                    </button>
+                    <button class="flex items-center">
+                        <i data-lucide="share-2" class="w-5 h-5 mr-1"></i> Share
+                    </button>
+                </div>
+                <div
+                    class="flex items-center mt-4 bg-gray-100 rounded-full p-2"
+                >
+                    <img
+                        src="https://i.pravatar.cc/32?img=68"
+                        alt="Profile"
+                        class="w-8 h-8 rounded-full mr-2"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Write a comment..."
+                        class="bg-transparent flex-grow focus:outline-none"
+                    />
+                    <button class="text-primary">
+                        <i data-lucide="smile" class="w-6 h-6"></i>
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
-        
-    <script>
-        function createFlightDetail(departureTime, departureAirport, arrivalTime, arrivalAirport, airline) {
-            return `
+
+        <script>
+            lucide.createIcons();
+        </script>
+        <script>
+            lucide.createIcons();
+
+            function createFlightDetail(
+                departureTime,
+                departureAirport,
+                arrivalTime,
+                arrivalAirport,
+                airline,
+            ) {
+                return `
                 <div class="space-y-6 mb-6">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
@@ -320,12 +264,26 @@
                     <div class="text-lg font-semibold">${airline}</div>
                 </div>
             `;
-        }
-    
-        const flightDetailsContainer = document.getElementById('flightDetails');
-        flightDetailsContainer.innerHTML += createFlightDetail("20:55", "MNL T2", "22:15", "BCD", "Philippines AirAsia");
-        flightDetailsContainer.innerHTML += '<hr class="my-6 border-gray-200">';
-        flightDetailsContainer.innerHTML += createFlightDetail("20:55", "MNL T2", "22:15", "BCD", "Philippines AirAsia");
-    </script>
-</body>
+            }
+
+            const flightDetailsContainer =
+                document.getElementById("flightDetails");
+            flightDetailsContainer.innerHTML += createFlightDetail(
+                "20:55",
+                "MNL T2",
+                "22:15",
+                "BCD",
+                "Philippines AirAsia",
+            );
+            flightDetailsContainer.innerHTML +=
+                '<hr class="my-6 border-gray-200">';
+            flightDetailsContainer.innerHTML += createFlightDetail(
+                "20:55",
+                "MNL T2",
+                "22:15",
+                "BCD",
+                "Philippines AirAsia",
+            );
+        </script>
+    </body>
 </html>
