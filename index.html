@@ -1,251 +1,204 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>John Smith - Social Media Profile</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/lucide@latest"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: {
-                                light: "#4ade80",
-                                DEFAULT: "#22c55e",
-                                dark: "#16a34a",
-                            },
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Smith - Social Media Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#22c55e',
                         },
-                    },
-                },
-            };
-        </script>
-        <style>
+                        'light-green': '#e6f7e9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media (min-width: 768px) {
             body {
-                background-color: #f0fdf4;
+                background-color: #e6f7e9;
             }
-            .profile-header {
-                height: 150px;
-                background-color: #22c55e;
-            }
-            .profile-image {
-                width: 100px;
-                height: 100px;
-                border: 4px solid white;
-                margin-top: -50px;
-            }
-        </style>
-    </head>
-    <body>
-        <nav class="bg-white shadow-sm p-4 flex justify-between items-center">
-            <button class="text-gray-500">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-            <span class="font-bold text-xl">Put Logo Here</span>
+        }
+    </style>
+</head>
+<body class="bg-white md:bg-light-green">
+    <nav class="bg-white shadow-sm p-4 flex justify-between items-center">
+        <button class="md:hidden text-gray-500">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+        <span class="font-bold text-xl">Put Logo Here</span>
+        <div class="hidden md:flex items-center space-x-4">
+            <div class="relative">
+                <input type="text" placeholder="Search menu..." class="pl-8 pr-4 py-2 border border-gray-300 rounded-md">
+                <i data-lucide="search" class="w-4 h-4 absolute left-2 top-3 text-gray-400"></i>
+            </div>
+            <i data-lucide="message-square" class="w-6 h-6 text-gray-500"></i>
+            <i data-lucide="bell" class="w-6 h-6 text-gray-500"></i>
+            <img src="https://i.pravatar.cc/32?img=68" alt="Profile" class="w-8 h-8 rounded-full">
             <span class="text-sm text-gray-600">johnsmith@studio.com</span>
-        </nav>
+        </div>
+        <span class="md:hidden text-sm text-gray-600">johnsmith@studio.com</span>
+    </nav>
 
-        <div class="profile-header"></div>
+    <header class="bg-primary h-48 md:h-24 relative">
+        <div class="container mx-auto px-4 md:invisible">
+            <img src="https://i.pravatar.cc/150?img=68" alt="John Smith" class="rounded-full w-32 h-32 border-4 border-white absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 md:left-0 md:transform-none">
+        </div>
+    </header>
 
-        <div class="container mx-auto px-4">
-            <img
-                src="https://i.pravatar.cc/100?img=68"
-                alt="John Smith"
-                class="profile-image rounded-full mx-auto"
-            />
-            <h1 class="text-2xl font-bold text-center mt-2">John Smith</h1>
-            <p class="text-gray-600 text-center">@johnsmith</p>
+    <div class="container mx-auto px-4 mt-20 md:mt-4">
+        <div class="flex flex-wrap -mx-4">
+            <!-- Profile Section -->
+            <div class="w-full md:w-1/4 px-4 mb-8">
+                <img src="https://i.pravatar.cc/128?img=68" alt="Profile picture" class="hidden sm:block md:block lg:block rounded-full w-32 h-32 border-4 border-white mb-4"/>
+                <h1 class="text-2xl font-bold text-center md:text-left">John Smith</h1>
+                <p class="text-gray-600 text-center md:text-left">@johnsmith</p>
 
-            <p class="mt-4 text-sm text-center">
-                Principal Software Engineer of Codecodemelon. Creator of Profile
-                Theme. Bringing the world closer together. Studied Computer
-                Science and Psychology at Harvard University.
-            </p>
+                <p class="mt-4 text-sm text-center md:text-left">
+                    Principal Software Engineer of Codecodemelon. Creator of Profile Theme. Bringing the world closer together. Studied Computer Science and Psychology at Harvard University.
+                </p>
 
-            <div class="flex items-center justify-center mt-4 text-sm">
-                <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-primary"></i>
-                <span>New York, NY</span>
-            </div>
-
-            <div class="flex items-center justify-center mt-2 text-sm">
-                <i data-lucide="link" class="w-4 h-4 mr-2 text-primary"></i>
-                <a href="#" class="text-primary"
-                    >codecodemelon.github.io/social-media-profile</a
-                >
-            </div>
-
-            <hr class="my-6 border-green-200" />
-
-            <h2 class="font-bold mb-4">Verified people to connect</h2>
-            <div class="space-y-4">
-                <div class="flex items-center">
-                    <img
-                        src="https://i.pravatar.cc/40?img=1"
-                        alt=""
-                        class="w-10 h-10 rounded-full mr-2"
-                    />
-                    <div>
-                        <p class="font-bold text-sm">Dindo Reyes</p>
-                        <p class="text-xs text-gray-600">234k connections</p>
-                    </div>
-                    <button
-                        class="ml-auto bg-primary text-white text-xs px-4 py-1 rounded-full"
-                    >
-                        Connect
-                    </button>
+                <div class="flex items-center justify-center md:justify-start mt-4 text-sm">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-primary"></i>
+                    <span>New York, NY</span>
                 </div>
-                <div class="flex items-center">
-                    <img
-                        src="https://i.pravatar.cc/40?img=2"
-                        alt=""
-                        class="w-10 h-10 rounded-full mr-2"
-                    />
-                    <div>
-                        <p class="font-bold text-sm">Jose Michael Agas</p>
-                        <p class="text-xs text-gray-600">1.5M connections</p>
-                    </div>
-                    <button
-                        class="ml-auto bg-primary text-white text-xs px-4 py-1 rounded-full"
-                    >
-                        Connect
-                    </button>
+
+                <div class="flex items-center justify-center md:justify-start mt-2 text-sm">
+                    <i data-lucide="link" class="w-4 h-4 mr-2 text-primary"></i>
+                    <a href="#" class="text-primary">codecodemelon.github.io/social-media-profile</a>
                 </div>
-                <!-- Flight Details Section -->
-                <div class="container mx-auto px-4 mt-8">
-                    <div
-                        id="flightDetails"
-                        class="bg-white rounded-lg shadow p-6"
-                    >
-                        <h2 class="text-2xl font-bold mb-6">Flight Details</h2>
-                        <!-- Flight details will be inserted here by JavaScript -->
+
+                <h2 class="font-bold mt-8 mb-4">Verified people to connect</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <img src="https://i.pravatar.cc/40?img=1" alt="" class="w-10 h-10 rounded-full mr-2"/>
+                        <div>
+                            <p class="font-bold text-sm">Dindo Reyes</p>
+                            <p class="text-xs text-gray-600">234k connections</p>
+                        </div>
+                        <button class="ml-auto bg-primary text-white text-xs px-4 py-1 rounded-full">Connect</button>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://i.pravatar.cc/40?img=2" alt="" class="w-10 h-10 rounded-full mr-2"/>
+                        <div>
+                            <p class="font-bold text-sm">Jose Michael Agas</p>
+                            <p class="text-xs text-gray-600">1.5M connections</p>
+                        </div>
+                        <button class="ml-auto bg-primary text-white text-xs px-4 py-1 rounded-full">Connect</button>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-8 bg-white rounded-lg shadow p-4">
-                <div class="grid grid-cols-2 gap-2 mb-4">
-                    <img
-                        src="https://picsum.photos/300/200?random=1"
-                        alt=""
-                        class="w-full h-32 object-cover rounded"
-                    />
-                    <img
-                        src="https://picsum.photos/300/200?random=2"
-                        alt=""
-                        class="w-full h-32 object-cover rounded"
-                    />
-                </div>
-                <div class="flex justify-between text-gray-500 text-sm">
-                    <button class="flex items-center">
-                        <i data-lucide="heart" class="w-5 h-5 mr-1"></i> React
-                    </button>
-                    <button class="flex items-center">
-                        <i
-                            data-lucide="message-circle"
-                            class="w-5 h-5 mr-1"
-                        ></i>
-                        Comment
-                    </button>
-                    <button class="flex items-center">
-                        <i data-lucide="share-2" class="w-5 h-5 mr-1"></i> Share
-                    </button>
-                </div>
-                <div
-                    class="flex items-center mt-4 bg-gray-100 rounded-full p-2"
-                >
-                    <img
-                        src="https://i.pravatar.cc/32?img=68"
-                        alt="Profile"
-                        class="w-8 h-8 rounded-full mr-2"
-                    />
-                    <input
-                        type="text"
-                        placeholder="Write a comment..."
-                        class="bg-transparent flex-grow focus:outline-none"
-                    />
-                    <button class="text-primary">
-                        <i data-lucide="smile" class="w-6 h-6"></i>
-                    </button>
+            <!-- Flight Details (comes after profile on mobile, right column on desktop) -->
+            <div class="w-full md:w-1/4 md:order-last px-4 mb-8">
+                <div id="flightDetails" class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-2xl font-bold mb-6">Flight Details</h2>
+                    <!-- Flight details will be inserted here by JavaScript -->
                 </div>
             </div>
 
-            <div class="mt-8 bg-white rounded-lg shadow p-4">
-                <div class="flex items-center mb-4">
-                    <img
-                        src="https://i.pravatar.cc/40?img=3"
-                        alt=""
-                        class="w-10 h-10 rounded-full mr-2"
-                    />
-                    <div>
-                        <p class="font-bold text-sm">Clyde Stanley</p>
-                        <p class="text-xs text-gray-600">
-                            is watching PATAGONIA 8K
-                        </p>
+            <!-- Main content -->
+            <div class="w-full md:w-2/4 px-4 mb-8">
+                <div class="bg-white md:rounded-lg md:shadow md:p-6">
+                    <div class="flex justify-between border-b pb-4 text-sm">
+                        <div><span class="font-bold">382</span> Posts</div>
+                        <div><span class="font-bold">1.3m</span> Connections</div>
+                        <div><span class="font-bold">1,397</span> Connected</div>
+                        <div><span class="font-bold">120</span> Videos</div>
+                        <div><span class="font-bold">2,592</span> Photos</div>
                     </div>
-                </div>
-                <p class="mb-4">Nice PATAGONIA footage in 8K</p>
-                <div class="relative pb-[56.25%]">
-                    <iframe
-                        class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/ChOhcHD8fBA"
-                        frameborder="0"
-                        allowfullscreen
-                    ></iframe>
-                </div>
-                <div class="flex justify-between text-gray-500 text-sm mt-4">
-                    <button class="flex items-center">
-                        <i data-lucide="heart" class="w-5 h-5 mr-1"></i> React
-                    </button>
-                    <button class="flex items-center">
-                        <i
-                            data-lucide="message-circle"
-                            class="w-5 h-5 mr-1"
-                        ></i>
-                        Comment
-                    </button>
-                    <button class="flex items-center">
-                        <i data-lucide="share-2" class="w-5 h-5 mr-1"></i> Share
-                    </button>
-                </div>
-                <div
-                    class="flex items-center mt-4 bg-gray-100 rounded-full p-2"
-                >
-                    <img
-                        src="https://i.pravatar.cc/32?img=68"
-                        alt="Profile"
-                        class="w-8 h-8 rounded-full mr-2"
-                    />
-                    <input
-                        type="text"
-                        placeholder="Write a comment..."
-                        class="bg-transparent flex-grow focus:outline-none"
-                    />
-                    <button class="text-primary">
-                        <i data-lucide="smile" class="w-6 h-6"></i>
-                    </button>
+
+                    <!-- Post -->
+                    <div class="mt-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/40?img=3" alt="" class="w-10 h-10 rounded-full mr-2"/>
+                            <div>
+                                <p class="font-bold text-sm">Clyde Stanley</p>
+                                <p class="text-xs text-gray-600">at South Lake Tahoe, California</p>
+                            </div>
+                        </div>
+
+                        <p class="mb-4">Best vacation of 2024.</p>
+
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <img src="https://picsum.photos/300/200?random=1" alt="" class="w-full h-48 object-cover rounded"/>
+                            <img src="https://picsum.photos/300/200?random=2" alt="" class="w-full h-48 object-cover rounded"/>
+                        </div>
+
+                        <div class="flex justify-between text-gray-500 text-sm">
+                            <button class="flex items-center">
+                                <i data-lucide="heart" class="w-5 h-5 mr-1"></i> React
+                            </button>
+                            <button class="flex items-center">
+                                <i data-lucide="message-circle" class="w-5 h-5 mr-1"></i> Comment
+                            </button>
+                            <button class="flex items-center">
+                                <i data-lucide="share-2" class="w-5 h-5 mr-1"></i> Share
+                            </button>
+                        </div>
+
+                        <div class="flex items-center mt-4 bg-gray-100 rounded-full p-2">
+                            <img src="https://i.pravatar.cc/32?img=68" alt="Profile" class="w-8 h-8 rounded-full mr-2"/>
+                            <input type="text" placeholder="Write a comment..." class="bg-transparent flex-grow focus:outline-none"/>
+                            <button class="text-gray-500"><i data-lucide="smile" class="w-6 h-6"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Video post -->
+                    <div class="mt-8">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/40?img=3" alt="" class="w-10 h-10 rounded-full mr-2"/>
+                            <div>
+                                <p class="font-bold text-sm">Clyde Stanley</p>
+                                <p class="text-xs text-gray-600">is watching PATAGONIA 8K</p>
+                            </div>
+                        </div>
+
+                        <p class="mb-4">Nice PATAGONIA footage in 8K</p>
+
+                        <div class="relative pb-[56.25%] mb-4">
+                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/ChOhcHD8fBA" frameborder="0" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="flex justify-between text-gray-500 text-sm">
+                            <button class="flex items-center">
+                                <i data-lucide="heart" class="w-5 h-5 mr-1"></i> React
+                            </button>
+                            <button class="flex items-center">
+                                <i data-lucide="message-circle" class="w-5 h-5 mr-1"></i> Comment
+                            </button>
+                            <button class="flex items-center">
+                                <i data-lucide="share-2" class="w-5 h-5 mr-1"></i> Share
+                            </button>
+                        </div>
+
+                        <div class="flex items-center mt-4 bg-gray-100 rounded-full p-2">
+                            <img src="https://i.pravatar.cc/32?img=68" alt="Profile" class="w-8 h-8 rounded-full mr-2"/>
+                            <input type="text" placeholder="Write a comment..." class="bg-transparent flex-grow focus:outline-none"/>
+                            <button class="text-gray-500"><i data-lucide="smile" class="w-6 h-6"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script>
-            lucide.createIcons();
-        </script>
-        <script>
-            lucide.createIcons();
+    <script>
+        lucide.createIcons();
 
-            function createFlightDetail(
-                departureTime,
-                departureAirport,
-                arrivalTime,
-                arrivalAirport,
-                airline,
-            ) {
-                return `
+        function createFlightDetail(departureTime, departureAirport, arrivalTime, arrivalAirport, airline) {
+            return `
                 <div class="space-y-6 mb-6">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
-                            <img src="https://airhex.com/images/airline-logos/tail/philippine-airlines.png" alt="Airline Logo" class="w-8 h-8 rounded">
+                            <img src="https://airhex.com/images/airline-logos/tail/philippine-airlines.png" alt="Airline Logo" class="w-8 h-8">
                             <div>
                                 <div class="text-2xl font-bold">${departureTime}</div>
                                 <div class="text-gray-600">${departureAirport}</div>
@@ -264,26 +217,12 @@
                     <div class="text-lg font-semibold">${airline}</div>
                 </div>
             `;
-            }
+        }
 
-            const flightDetailsContainer =
-                document.getElementById("flightDetails");
-            flightDetailsContainer.innerHTML += createFlightDetail(
-                "20:55",
-                "MNL T2",
-                "22:15",
-                "BCD",
-                "Philippines AirAsia",
-            );
-            flightDetailsContainer.innerHTML +=
-                '<hr class="my-6 border-gray-200">';
-            flightDetailsContainer.innerHTML += createFlightDetail(
-                "20:55",
-                "MNL T2",
-                "22:15",
-                "BCD",
-                "Philippines AirAsia",
-            );
-        </script>
-    </body>
+        const flightDetailsContainer = document.getElementById('flightDetails');
+        flightDetailsContainer.innerHTML += createFlightDetail("20:55", "MNL T2", "22:15", "BCD", "Philippines AirAsia");
+        flightDetailsContainer.innerHTML += '<hr class="my-6 border-gray-200">';
+        flightDetailsContainer.innerHTML += createFlightDetail("20:55", "MNL T2", "22:15", "BCD", "Philippines AirAsia");
+    </script>
+</body>
 </html>
